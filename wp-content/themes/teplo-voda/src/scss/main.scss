@@ -1065,7 +1065,7 @@ body {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   width: calc(100% - 100px);
 
   .section_about_company_title {
@@ -1090,6 +1090,28 @@ body {
     text-decoration: #ffdead;
     color: #1f1f1f;
     text-align: center;
+  }
+  .section_about_company_item{
+    width: 33%;
+    height: auto;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    .section_about_company_item_container{
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      .section_about_company_item__img{
+        width: 80px;
+        height: 80px;
+        img{
+          width: 80px;
+          height: 80px;
+        }
+      }
+      .section_about_company__title{
+        padding: 20px;
+      }
+    }
   }
 }
 section.market{
