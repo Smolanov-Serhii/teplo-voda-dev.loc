@@ -34,9 +34,9 @@
                         <span>інженерні системи</span>та будівництво
                     </div>
                     <div class="site-branding__main_menu__phone">
-                        <span><img src="<?php echo get_template_directory_uri() ?>/img/kyivstar.svg"> +38 (067) 829 04 83</span>
-                        <span><img src="<?php echo get_template_directory_uri() ?>/img/life.svg"> +38 (073) 213 77 05</span>
-                        <span><img src="<?php echo get_template_directory_uri() ?>/img/MTS.svg"> +38 (050) 346 13 43</span>
+                        <span><img src="<?php echo get_template_directory_uri() ?>/img/kyivstar.svg"> +38 (097) 881 81 44</span>
+                        <span><img src="<?php echo get_template_directory_uri() ?>/img/life.svg"> +38 (093) 052 01 14</span>
+                        <span><img src="<?php echo get_template_directory_uri() ?>/img/MTS.svg"> +38 (066) 359 87 05</span>
                     </div>
                     <div class="calculator_btn">
                         <a class="finger_link"><img

