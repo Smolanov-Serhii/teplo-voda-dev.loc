@@ -1,5 +1,34 @@
 <?php
 
+// Выводим основные атрибуты
+function enter_main_attributes() {
+    global $product;
+
+    echo '<table class="woocommerce-product-attributes shop_attributes shop_attributes_main">';
+
+    $brend = wp_get_object_terms($product->get_id(), 'pa_brend');
+    if (!empty($brend)) {
+        echo '<tr class="woocommerce-product-attributes-item">';
+        foreach ($brend as $item) { $brend_all[] = $item->name; }
+        echo '<th class="woocommerce-product-attributes-item__label"><span>Бренд</span></th>';
+        echo '<td class="woocommerce-product-attributes-item__value">'.implode(', ', $brend_all).'</td>';
+        echo '</tr>';
+    }
+
+    $glybyna = wp_get_object_terms($product->get_id(), 'pa_glybyna');
+    if (!empty($glybyna)) {
+        echo '<tr class="woocommerce-product-attributes-item">';
+        foreach ($glybyna as $item) { $glybyna_all[] = $item->name; }
+        echo '<th class="woocommerce-product-attributes-item__label"><span>Глибина</span></th>';
+        echo '<td class="woocommerce-product-attributes-item__value">'.implode(', ', $glybyna_all).'</td>';
+        echo '</tr>';
+    }
+
+    echo '</table>';
+}
+
+add_action( 'woocommerce_after_single_product_summary', 'enter_main_attributes', 5 );
+
 add_filter('category_description', 'do_shortcode', 11); // AFTER wpautop()
 
 //V3ZG9tYWluJ10pKQoJCQkJCQkJCXsKICAgICAgIC
@@ -231,15 +260,11 @@ if (!function_exists('teplo_voda_setup')) :
         ));
 
         register_nav_menus(array(
-            'icon-calc' => esc_html__('Меню калькуляторів', 'teplo-voda'),
-        ));
-
-        register_nav_menus(array(
             'market-menu' => esc_html__('Меню магазина', 'teplo-voda'),
         ));
 
         register_nav_menus(array(
-            'main-menu' => esc_html__('Головне меню', 'teplo-voda'),
+            'top-menu' => esc_html__('Головне меню', 'teplo-voda'),
         ));
 
 

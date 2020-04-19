@@ -14,7 +14,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
@@ -53,7 +53,7 @@
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'main_menu',
-                    'menu_id' => 'main_menu',
+                    'menu_id' => 'Головне меню',
                 ));
                 ?>
             </div>
