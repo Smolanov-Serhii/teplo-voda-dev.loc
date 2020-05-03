@@ -4,7 +4,7 @@
             infinite: true,
             speed: 300,
             arrows: true,
-            slidesToShow: 8,
+            slidesToShow: 9,
             slidesToScroll: 1,
             draggable: true,
             touchMove: true,

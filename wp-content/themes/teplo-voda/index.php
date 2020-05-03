@@ -19,8 +19,10 @@
 <div id="content" class="site-content">
     <div class="">
         <section class="content_market">
+
             <div class="top_continer_search">
-                <div class="menu_hesder_margin">
+                <div class="wrapper">
+                    <div class="menu_hesder_margin">
                     <div class="menu_hesder_margin__banner">
 
                     </div>
@@ -41,6 +43,8 @@
 
                     </div>
                 </div>
+                </div>
+
             </div>
             <div id="site-main" class="site-main global_container">
                 <div class="column_wrapper">
@@ -146,25 +150,23 @@
         </div>
         <div class="market_multiple_items">
             <div class="market_multiple_items__title">
-
+                <div class="market_brandes">
+            <h3>Топові бренди</h3>
+            <?php echo do_shortcode( '[pwb-carousel items="10" items_to_show="6" items_to_scroll="1" image_size="thumbnail" autoplay="true"]' ); ?>
+                </div>
             </div>
             <div class="market_multiple_items__wrapper">
-                <div class="payes_items"></div>
+                <div class="new_items">
+                    <h3>Рекомендації для Вас</h3>
+                    <?php echo do_shortcode( '[featured_products per_page="4" columns="4"]' ); ?>
+                </div>
                 <div class="new_items">
                     <h3>Нові товари</h3>
                     <?php echo do_shortcode( '[recent_products per_page="4" columns="4"]' ); ?>
                 </div>
             </div>
         </div>
-        <div class="market_recommended">
-            <h3>Рекомендації для Вас</h3>
-            <?php echo do_shortcode( '[featured_products per_page="6" columns="6"]' ); ?>
-        </div>
-        <div class="market_brandes">
-            <h3>Топові бренди</h3>
-            <?php echo do_shortcode( '[pwb-carousel items="10" items_to_show="6" items_to_scroll="1" image_size="thumbnail" autoplay="true"]' ); ?>
 
-        </div>
 <!--        --><?php //the_title(); ?>
 <!--        --><?php //the_content(); ?>
 <!--        --><?php //the_content( 'Continue reading ' . get_the_title() ); ?>

@@ -12,27 +12,30 @@
     <div class="">
         <section class="content_market">
             <div class="top_continer_search">
-                <div class="menu_hesder_margin">
-                    <div class="menu_hesder_margin__banner">
+                <div class="wrapper">
+                    <div class="menu_hesder_margin">
+                        <div class="menu_hesder_margin__banner">
 
-                    </div>
-                    <div class="menu_hesder_margin__header">
-                        <span>Магазин товарів</span>
-                    </div>
-                </div>
-                <div class="aligment_container">
-                    <div class="top_continer_search__search">
-                        <div class="top_continer_search__search__input">
-                            <?php get_search_form(); ?>
                         </div>
-                        <div class="top_continer_search__search__breadcrumbs">
-                            <span><?php the_breadcrumb() ?></span>
+                        <div class="menu_hesder_margin__header">
+                            <span>Магазин товарів</span>
                         </div>
                     </div>
-                    <div class="top_continer_search__right">
+                    <div class="aligment_container">
+                        <div class="top_continer_search__search">
+                            <div class="top_continer_search__search__input">
+                                <?php get_search_form(); ?>
+                            </div>
+                            <div class="top_continer_search__search__breadcrumbs">
+                                <span><?php the_breadcrumb() ?></span>
+                            </div>
+                        </div>
+                        <div class="top_continer_search__right">
 
+                        </div>
                     </div>
                 </div>
+
             </div>
             <div id="site-main_single_content">
                 <div class="column_wrapper">

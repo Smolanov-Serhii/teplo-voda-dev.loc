@@ -266,7 +266,7 @@ body {
             position: absolute;
             top: calc(50% - 30px);
             left: 0;
-            width: 80px;
+            width: 30px;
             height: 80px;
             z-index: 10;
             transform: rotate(180deg);
@@ -277,12 +277,12 @@ body {
             align-items: center;
             border-radius: 50%;
 
-            &:hover {
-              transform: scale(1.1) rotate(180deg);
-              transition-duration: 0.3s;
-              box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
-              background-color: white;
-            }
+            //&:hover {
+            //  transform: scale(1.1) rotate(180deg);
+            //  transition-duration: 0.3s;
+            //  box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+            //  background-color: white;
+            //}
 
             img {
               width: auto;
@@ -294,7 +294,7 @@ body {
             position: absolute;
             top: calc(50% - 30px);
             right: 0;
-            width: 80px;
+            width: 30px;
             height: 80px;
             z-index: 10;
             transition-duration: 0.3s;
@@ -304,12 +304,12 @@ body {
             align-items: center;
             border-radius: 50%;
 
-            &:hover {
-              transform: scale(1.1);
-              transition-duration: 0.3s;
-              background-color: white;
-              box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
-            }
+            //&:hover {
+            //  transform: scale(1.1);
+            //  transition-duration: 0.3s;
+            //  background-color: white;
+            //  box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+            //}
 
             img {
               width: auto;
@@ -335,7 +335,7 @@ body {
             height: auto;
 
             .slick-list {
-              padding-bottom: 20px;
+              //padding-bottom: 20px;
 
               .slick-track {
                 position: relative;
@@ -355,7 +355,7 @@ body {
                   padding-top: 20px;
 
                   &:hover {
-                    transform: scale(1.2);
+                    transform: scale(1.1);
                     transition-duration: 0.5s;
                   }
 
@@ -378,20 +378,18 @@ body {
                       color: #32b9ae;
                       width: 100%;
                       text-align: center;
-                      display: flex;
                       margin: auto;
                       align-items: center;
                       align-content: center;
                       align-self: center;
                       justify-content: center;
                       text-transform: uppercase;
-                      position: absolute;
-                      top: 124px;
-                      left: 0;
                       word-break: break-word;
-                      font-size: 13px;
+                      font-size: 12px;
                       font-weight: bolder;
                       padding: 8px 0;
+                      display: block;
+                      height: 30px;
                     }
                   }
                 }
@@ -438,27 +436,30 @@ body {
 
 .market {
   background-color: #57E2B1;
+
 }
 
 .content_market {
-  width: calc(100% - 100px);
+  width: 100%;
   margin: auto;
-  padding: 20px;
-  margin: auto;
+  background-color: #C9FBF2;
 
 
   .top_continer_search {
     width: 100%;
-    max-width: 1440px;
     background-color: black;
     margin: auto;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    height: auto;
-    padding: 0 0 0 20px;
+
+    .wrapper{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      height: auto;
+      max-width: 1440px;
+      margin: auto;
+    }
 
     .menu_hesder_margin {
       width: 20%;
@@ -494,10 +495,9 @@ body {
       display: flex;
       justify-content: center;
       flex-direction: row;
-      padding-right: 20px;
 
       .top_continer_search__right {
-        width: calc(30% - 30px);;
+        width: 30%;
         margin: 10px 0;
         background-color: white;
         border-radius: 10px;
@@ -585,7 +585,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
-    padding: 0 0 0 20px;
+    background-color: transparent;
     ul.menu {
       list-style: none;
       margin: 0;
@@ -606,7 +606,7 @@ body {
         }
       }
       li {
-        padding: 8px 0;
+        padding: 8px 0 0 20px;
         height: 50px;
         transition-duration: 0.5s;
         border-bottom: solid 1px #32b9ae;
@@ -686,6 +686,7 @@ body {
       display: flex;
       justify-content: center;
       flex-direction: row;
+      border-radius: 0 0 0 10px;
 
       .left_container_single {
         width: 20%;
@@ -699,6 +700,7 @@ body {
         display: flex;
         justify-content: center;
         flex-direction: column;
+        background-color: #c9fbf2;
 
         .column_wrapper__video {
           display: flex;
@@ -877,12 +879,15 @@ body {
         min-height: 100px;
         margin: 0 auto;
         box-sizing: border-box;
+        border-radius: 0 0 10px 10px;
+        background-color: white;
 
         div {
           ul.menu {
             list-style: none;
             margin: 0;
             padding: 0;
+            border-radius: 0 0 10px 10px;
 
             li {
               transition-duration: 0.5s;
@@ -900,6 +905,10 @@ body {
                 a {
                   color: white;
                 }
+              }
+              &:last-child{
+                border-bottom: none;
+                border-radius: 0 0 10px 10px;
               }
 
               a {
@@ -1302,7 +1311,25 @@ section.market {
 }
 
 section.market {
-  max-width: 1440px;
+  background-color:  #c9fbf2;
+  position: relative;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  &:before{
+    position: absolute;
+    height: 30px;
+    background-color: #c9fbf2;
+    display: block;
+    width: 100%;
+    z-index: -1;
+    content: "";
+    top: -20px;
+    left: 0;
+  }
+  >div{
+    max-width: 1440px;
+    margin: auto;
+  }
 
   .woocommerce {
     ul.products {
@@ -1419,17 +1446,38 @@ section.market .woocommerce ul.products li.product .price {
     .payes_items {
       width: calc(50% - 10px);
       background-color: white;
-      border-radius: 10px;
       padding: 20px;
       box-sizing: border-box;
+      border-radius: 10px 10px 10px 10px;
+      overflow: hidden;
+      .market_recommended{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      h3{
+        margin: -20px -20px 20px!important;
+        padding: 20px;
+        background-color: rgba(87,226,177,.6);
+      }
     }
 
     .new_items {
       width: calc(50% - 10px);
       background-color: white;
-      border-radius: 10px;
       padding: 20px 20px 20px 20px;
       box-sizing: border-box;
+      border-radius: 10px 10px 10px 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      .woocommerce{
+        display: flex;
+        flex: 1;
+        .products{
+          width: 100%;
+        }
+      }
 
       ul {
 
@@ -1451,9 +1499,13 @@ section.market .woocommerce ul.products li.product .price {
   padding: 20px;
   background-color: white;
   border-radius: 10px;
+  overflow: hidden;
 
   h3 {
-    margin-top: 0;
+    margin: -20px -20px 20px!important;
+    padding: 20px;
+    background-color: rgba(87,226,177,.6);
+    font-size: 18px;
   }
 }
 
@@ -1480,9 +1532,17 @@ section.market .woocommerce ul.products {
 }
 
 .market_specials_items {
-  padding: 20px 20px 20px 20px;
+  position: relative;
+  padding: 20px 20px;
   background-color: white;
   border-radius: 10px;
+  box-sizing: border-box;
+  h3{
+    margin: -20px -20px 20px!important;
+    padding: 20px;
+    background-color: rgba(87,226,177,.6);
+    border-radius: 10px 10px 0 0;
+  }
 
   ul {
     li {
@@ -1529,6 +1589,7 @@ section.market .woocommerce ul.products {
     flex-wrap: nowrap;
     padding: 0 20px;
     box-sizing: border-box;
+    background-color: white;
 
     .left_container_single {
       width: 20%;
@@ -1612,6 +1673,7 @@ section.market .woocommerce ul.products {
               }
             }
 
+
             a {
               font-family: 'IBM Plex Sans', sans-serif;
               font-size: 16px;
@@ -1642,6 +1704,7 @@ section.market .woocommerce ul.products {
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
+
 
     .column_wrapper__video {
       width: 100%;
@@ -1834,8 +1897,8 @@ section.market .woocommerce ul.products {
           justify-content: flex-start;
           padding: 20px 0;
           .footer_pluses__img{
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             padding: 10px;
             border: 2px solid white;
             border-radius: 50%;
