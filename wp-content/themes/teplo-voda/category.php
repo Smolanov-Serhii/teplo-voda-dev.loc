@@ -146,10 +146,9 @@
     <?php }
     }
     wp_reset_query(); ?>
-</div>
+    </section>>
 <?php get_footer(); ?>
-</div>
-</div>
+
 
 
 

@@ -1,4 +1,7 @@
 <?php
+
+
+
 function mynew_product_subcategories( $args = array() ) {
     $parentid = get_queried_object_id();
     $args = array(
@@ -109,6 +112,10 @@ if (!function_exists('teplo_voda_setup')) :
 
         register_nav_menus(array(
             'icon-menu' => esc_html__('Меню іконок', 'teplo-voda'),
+        ));
+
+        register_nav_menus(array(
+            'footer_menu' => esc_html__('Меню підвал', 'teplo-voda'),
         ));
 
         register_nav_menus(array(

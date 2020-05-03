@@ -113,7 +113,7 @@
         <div class="section_news_categoty_title">
             <?php echo get_cat_name(29) ?>
         </div>
-        <div class="section_news_content">
+        <se class="section_news_content">
             <?php
             $args = array(
                 'category__in' => 29, //из какой категории вывести (удалите эту строку, если хотите, чтобы показовало последние материалы из всех рубрик сразу)
@@ -141,7 +141,6 @@
                 <?php }
             }
             wp_reset_query(); ?>
-        </div>
+    </section>
         <?php get_footer(); ?>
-</div>
-</div>
+

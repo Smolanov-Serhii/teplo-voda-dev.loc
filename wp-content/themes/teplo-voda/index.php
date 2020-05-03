@@ -204,7 +204,7 @@
     <?php }
     }
     wp_reset_query(); ?>
-</div>
+    </section>
 
 <section class="section_of_trust">
     <?php $posts = get_posts("category=29&orderby=date&numberposts=5"); ?>
@@ -275,19 +275,17 @@
                          style="background-image: url("<?php get_the_post_thumbnail_url(); ?>")">
 
                     <?php the_post_thumbnail(); ?>
+                    </div>
+                    <div class="section_about_company__title">
+                        <?php the_field('kilkist_robit') ?>
+                    </div>
                 </div>
-                <div class="section_about_company__title">
-                    <?php the_field('kilkist_robit') ?>
+                <div class="section_about_company__content">
+                    <?php the_excerpt(); ?>
                 </div>
-            </div>
-            <div class="section_about_company__content">
-                <?php the_excerpt(); ?>
-            </div>
             </div>
         <?php }
     }
     wp_reset_query(); ?>
 </section>
 <?php get_footer(); ?>
-</div>
-</div>

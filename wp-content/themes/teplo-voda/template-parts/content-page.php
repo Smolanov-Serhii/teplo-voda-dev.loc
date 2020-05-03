@@ -8,7 +8,7 @@
  */
 
 ?>
-<div id="content" class="site-content">
+<se id="content" class="site-content">
     <div class="">
         <section class="content_market">
             <div class="top_continer_search">
@@ -156,8 +156,6 @@
     <?php }
     }
     wp_reset_query(); ?>
-</div>
+    </section>
 <?php get_footer(); ?>
-</div>
-</div>
 
