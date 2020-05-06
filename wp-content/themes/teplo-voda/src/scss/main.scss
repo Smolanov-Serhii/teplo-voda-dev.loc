@@ -1723,7 +1723,7 @@ section.market .woocommerce ul.products {
       flex-direction: row;
       flex-wrap: nowrap;
 
-      .center_container_single {
+      .center_container_single, center_container_single_market {
         width: 80%;
         padding: 0 20px;
         box-sizing: border-box;
@@ -1791,6 +1791,113 @@ section.market .woocommerce ul.products {
           }
         }
 
+      }
+      .center_container_single_market{
+        width: 100%;
+        padding-right: 0;
+        padding-left: 20px;
+        article{
+          .entry-content{
+            .woocommerce{
+              .single-product{
+                .product{
+                  flex-direction: row;
+                  flex-wrap: wrap;
+                  display: flex;
+                  .woocommerce-product-gallery{
+                    width: calc(70% + 20px);
+                    .card_additional{
+                      margin-top: 20px;
+                      width: 100%;
+                      height: auto;
+                      .card_additional_list{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        flex-wrap: wrap;
+                        padding: 0;
+                        margin: 0;
+                        list-style: none;
+                        .card_additional__item{
+                          width: 33.3%;
+                          height: auto;
+                          cursor: pointer;
+                          padding: 10px 30px;
+                          box-sizing: border-box;
+                          .title{
+                            display: flex;
+                            justify-content: flex-start;
+                            flex-direction: row;
+                            align-items: center;
+                            img{
+                              width: 70px;
+                              height: 70px;
+                            }
+                          }
+                          .hidden_content{
+                            display: none;
+                          }
+                        }
+                      }
+
+                    }
+                  }
+                  .summary{
+                    align-self: stretch;
+                    background-color: #f6f6f6;
+                    width: calc(30% - 20px);
+                    padding: 20px;
+                    box-sizing: border-box;
+                    .cart{
+                      display: flex;
+                      flex-direction: row;
+                      .quantity{
+                        input{
+                          font-size: 24px;
+                        }
+
+                      }
+                    }
+                    .product_meta{
+                      width: 60%;
+                      .posted_in{
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        font-size: 18px;
+                        padding: 20px 0 10px 0;
+                        text-decoration: none;
+                        color: black;
+                        a{
+                          font-size: 18px;
+                          padding: 0px 0;
+                          text-decoration: none;
+                          color: black;
+                          &:first-child{
+                            margin-top: 0px;
+                          }
+                        }
+                      }
+                    }
+                    .price{
+                      text-align: center;
+                      > span{
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 34px;
+                        ins{
+                          font-size: 36;
+                          color: #ff8900;
+                        }
+                      }
+                    }
+
+                  }
+                }
+              }
+            }
+          }
+        }
       }
 
       .right_container_single {

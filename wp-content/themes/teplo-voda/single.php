@@ -58,7 +58,7 @@
                     </div>
                     <div class="column_wrapper__main">
                         <div class="column_wrapper_container">
-                            <div class="center_container_single">
+                            <div class="center_container_single_market">
                                 <?php
                                 while (have_posts()) :
                                     the_post();
@@ -84,11 +84,6 @@
                                 }
                                 ?>
 
-                            </div>
-                            <div class="right_container_single">
-                                <aside id="right_sidebar" class="widget-area">
-                                    <?php dynamic_sidebar('sidebar-right'); ?>
-                                </aside><!-- #secondary -->
                             </div>
                         </div>
                         <div class="column_wrapper__video">
