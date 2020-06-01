@@ -146,7 +146,7 @@ if (!function_exists('teplo_voda_setup')) :
         ));
 
         register_nav_menus(array(
-            'top-menu' => esc_html__('Головне меню', 'teplo-voda'),
+            'main_menu' => esc_html__('Головне меню', 'teplo-voda'),
         ));
 
 

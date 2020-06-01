@@ -53,7 +53,7 @@
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'main_menu',
-                    'menu_id' => 'Головне меню',
+                    'menu_id' => 'main_menu',
                 ));
                 ?>
             </div>

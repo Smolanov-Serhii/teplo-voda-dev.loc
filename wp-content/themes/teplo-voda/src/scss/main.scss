@@ -25,7 +25,16 @@ body {
       }
     }
   }
-
+  #gtranslate_wrapper{
+    position: fixed!important;
+    right: 10px!important;
+    top: 210px!important;
+    left: auto!important;
+    img{
+      width: 35px!important;
+      height: auto!important;
+    }
+  }
   .global_container {
     max-width: 1440px;
     margin: auto;
@@ -344,6 +353,7 @@ body {
                     flex-direction: column;
                     text-decoration: none;
                     outline: none;
+                    font-family: 'IBM Plex Sans',sans-serif;
 
                     img {
                       width: 100%;
@@ -1664,6 +1674,7 @@ section.market .woocommerce ul.products {
               opacity: 1;
               transition: 0.3s;
               pointer-events: all;
+              min-width: 280px;
             }
             .sub-menu{
               pointer-events: none;
@@ -1678,6 +1689,7 @@ section.market .woocommerce ul.products {
               list-style: none;
               margin: 0;
               padding: 0;
+              min-width: 280px;
               box-sizing: border-box;
               border: 1px solid #32b9ae;
               li{
@@ -1685,6 +1697,10 @@ section.market .woocommerce ul.products {
                 box-sizing: border-box;
                 height: 50px;
                 display: flex;
+                border-bottom: 1px solid white;
+                &:last-child{
+                  border-bottom: none;
+                }
                 &:hover{
                   background-color: #8BB9AD;
                 }
@@ -1760,12 +1776,14 @@ section.market .woocommerce ul.products {
 
       .center_container_single, center_container_single_market {
         width: 80%;
-        padding: 0 20px;
+        padding: 0 10px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: flex-start;
+        margin: 0 10px;
+        background-color: white;
         article{
           .entry-header{
             .entry-title{
@@ -1975,6 +1993,7 @@ section.market .woocommerce ul.products {
 
       .right_container_single {
         width: 30%;
+        background-color: white;
 
         #right_sidebar {
           section {
