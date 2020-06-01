@@ -134,7 +134,7 @@
                 <span><img src="<?php echo get_template_directory_uri() ?>/img/e-mail.svg"> manager@teplo-voda.com.ua</span>
                 <div class="footer_right__title">Слідкуйте за нами:</div>
                 <div class="socials">
-                    <a href=""><img src="<?php echo get_template_directory_uri() ?>/img/footer_face_wh.svg" alt="Facebook"></a>
+                    <a href="https://www.facebook.com/%D0%A2%D0%B5%D0%BF%D0%BB%D0%BE-%D0%92%D0%BE%D0%B4%D0%B0-100382768073232/"><img src="<?php echo get_template_directory_uri() ?>/img/footer_face_wh.svg" alt="Facebook"></a>
                     <a href=""><img src="<?php echo get_template_directory_uri() ?>/img/footer_insta_wh.svg" alt="Instagram"></a>
                     <a href=""><img src="<?php echo get_template_directory_uri() ?>/img/footer_youtube_wh.svg" alt="Youtube"></a>
                 </div>

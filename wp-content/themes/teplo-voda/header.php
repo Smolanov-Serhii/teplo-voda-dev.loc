@@ -61,7 +61,7 @@
 
             </div>
             <div class="main_menu_container__social">
-                <a href=""><img src="<?php echo get_template_directory_uri() . '/img/face.svg' ?>;"></a>
+                <a href="https://www.facebook.com/%D0%A2%D0%B5%D0%BF%D0%BB%D0%BE-%D0%92%D0%BE%D0%B4%D0%B0-100382768073232/"><img src="<?php echo get_template_directory_uri() . '/img/face.svg' ?>;"></a>
                 <a href=""><img src="<?php echo get_template_directory_uri() . '/img/viber.svg' ?>;"></a>
                 <a href=""><img src="<?php echo get_template_directory_uri() . '/img/insta.svg' ?>;"></a>
             </div>

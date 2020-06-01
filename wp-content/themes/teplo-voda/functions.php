@@ -1,54 +1,29 @@
 <?php
+add_filter('woocommerce_get_image_size_thumbnail','add_thumbnail_size',1,10);
+function add_thumbnail_size($size){
 
-function woocommerce_product_thumbnails_after() {
-    echo '<div class="card_additional">';
-    echo '<ul class="card_additional_list">';
-        echo '<li class="card_additional__item">';
-            echo '<div class="title">';
-                echo '<img src="' . get_template_directory_uri() .'/img/single_card_car.svg">';
-            echo '</div';
-            echo '<div class="content">Безкоштовна доставка</div>';
-            echo '<div class="hidden_content">Безкоштовна доставка дійсна при замовленні товара від 3000грн.</div>';
-        echo '</li>';
-        echo '<li class="card_additional__item">';
-            echo '<div class="title">';
-                echo '<img src="' . get_template_directory_uri() .'/img/single_card_money.svg">';
-            echo '</div';
-            echo '<div class="content">Оплата</div>';
-            echo '<div class="hidden_content">Безкоштовна доставка дійсна при замовленні товара від 3000грн.</div>';
-        echo '</li>';
-        echo '<li class="card_additional__item">';
-            echo '<div class="title">';
-                echo '<img src="' . get_template_directory_uri() .'/img/single_card_back.svg">';
-            echo '</div';
-            echo '<div class="content">Повернення товару</div>';
-            echo '<div class="hidden_content">Безкоштовна доставка дійсна при замовленні товара від 3000грн.</div>';
-        echo '</li>';
-        echo '<li class="card_additional__item">';
-            echo '<div class="title">';
-                echo '<img src="' . get_template_directory_uri() .'/img/single_card_sales.svg">';
-            echo '</div';
-            echo '<div class="content">Знижки та ціни</div>';
-            echo '<div class="hidden_content">Безкоштовна доставка дійсна при замовленні товара від 3000грн.</div>';
-        echo '</li>';
-        echo '<li class="card_additional__item">';
-            echo '<div class="title">';
-                echo '<img src="' . get_template_directory_uri() .'/img/single_card_def.svg">';
-            echo '</div';
-            echo '<div class="content">Гарантія</div>';
-            echo '<div class="hidden_content">Безкоштовна доставка дійсна при замовленні товара від 3000грн.</div>';
-        echo '</li>';
-        echo '<li class="card_additional__item">';
-            echo '<div class="title">';
-                echo '<img src="' . get_template_directory_uri() .'/img/single_card_call.svg">';
-            echo '</div';
-            echo '<div class="content">Допомога експерта</div>';
-            echo '<div class="hidden_content">Безкоштовна доставка дійсна при замовленні товара від 3000грн.</div>';
-        echo '</li>';
-    echo '</ul>';
-    echo '</div>';
+    $size['width'] = 300;
+    $size['height'] = 300;
+    $size['crop']   = 1; //0 - не обрезаем, 1 - обрезка
+    return $size;
 }
-add_action( 'woocommerce_product_thumbnails', 'woocommerce_product_thumbnails_after', 90 );
+add_filter('woocommerce_get_image_size_single','add_single_size',1,10);
+function add_single_size($size){
+
+    $size['width'] = 600;
+    $size['height'] = 600;
+    $size['crop']   = 0;
+    return $size;
+}
+add_filter('woocommerce_get_image_size_gallery_thumbnail','add_gallery_thumbnail_size',1,10);
+function add_gallery_thumbnail_size($size){
+
+    $size['width'] = 100;
+    $size['height'] = 100;
+    $size['crop']   = 1;
+    return $size;
+}
+
 
 function mynew_product_subcategories( $args = array() ) {
     $parentid = get_queried_object_id();
