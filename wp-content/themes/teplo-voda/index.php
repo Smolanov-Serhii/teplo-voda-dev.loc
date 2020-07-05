@@ -187,7 +187,7 @@
     <section class="market content_market">
         <div class="market_specials_items">
             <h3>Спеціальні пропозиції</h3>
-            <?php echo do_shortcode( '[sale_products per_page="6" columns="6"]' ); ?>
+            <?php echo do_shortcode( '[sale_products per_page="6" columns="6" orderby="rand"]' ); ?>
         </div>
         <div class="market_multiple_items">
             <div class="market_multiple_items__title">
@@ -199,11 +199,11 @@
             <div class="market_multiple_items__wrapper">
                 <div class="new_items">
                     <h3>Рекомендації для Вас</h3>
-                    <?php echo do_shortcode( '[featured_products per_page="4" columns="4"]' ); ?>
+                    <?php echo do_shortcode( '[featured_products per_page="4" columns="4" orderby="rand"]' ); ?>
                 </div>
                 <div class="new_items">
                     <h3>Нові товари</h3>
-                    <?php echo do_shortcode( '[recent_products per_page="4" columns="4"]' ); ?>
+                    <?php echo do_shortcode( '[recent_products per_page="4" columns="4" orderby="rand"]' ); ?>
                 </div>
             </div>
         </div>

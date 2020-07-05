@@ -149,6 +149,9 @@ if (!function_exists('teplo_voda_setup')) :
             'main_menu' => esc_html__('Головне меню', 'teplo-voda'),
         ));
 
+        register_nav_menus(array(
+            'pages_menu' => esc_html__('Меню страниц', 'teplo-voda'),
+        ));
 
         /*
          * Switch default core markup for search form, comment form, and comments
