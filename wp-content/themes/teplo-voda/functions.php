@@ -1,4 +1,18 @@
 <?php
+
+//function my_account_loginout_link() {
+//
+//    if (is_user_logged_in() ) {
+//        global $wp;
+//        $current_user = get_user_by( 'id', get_current_user_id() );
+//        echo '<a class="nav-link" href="'. wp_logout_url( get_permalink( wc_get_page_id( 'shop' ) ) ) .'">выйти</a>'; echo '<strong><a class="nav-link" href="'. get_permalink( wc_get_page_id( 'myaccount' ) ) .'">'.$current_user->display_name.'</a></strong>';
+//    }
+//    elseif (!is_user_logged_in() ) {
+//        echo '<a class="nav-link" href="' . get_permalink( wc_get_page_id( 'myaccount' ) ) . '">Авторизация/Регистрация</a>';
+//    }
+//
+//}
+
 add_filter('woocommerce_get_image_size_thumbnail','add_thumbnail_size',1,10);
 function add_thumbnail_size($size){
 
@@ -147,6 +161,9 @@ if (!function_exists('teplo_voda_setup')) :
 
         register_nav_menus(array(
             'main_menu' => esc_html__('Головне меню', 'teplo-voda'),
+        ));
+        register_nav_menus(array(
+            'login-menu' => esc_html__('Логин меню', 'teplo-voda'),
         ));
 
         register_nav_menus(array(

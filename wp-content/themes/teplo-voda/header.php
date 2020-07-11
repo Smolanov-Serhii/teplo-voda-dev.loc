@@ -57,9 +57,31 @@
                 ));
                 ?>
             </div>
-<!--            <div class="main_menu_container__hot_prop">-->
-<!---->
-<!--            </div>-->
+            <div class="main_menu_container__hot_prop">
+
+<!--                --><?php //my_account_loginout_link(); ?>
+                <?php
+
+                if ( is_user_logged_in() ) {
+                    ?>
+                    <div class="menu-logyn-menyu-container">
+                        <ul id="login-menu" class="menu">
+                            <li>
+                                <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Выход">Вийти</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <?php
+                }
+                else {
+                    wp_nav_menu(array(
+                        'theme_location' => 'login-menu',
+                        'menu_id' => 'login-menu',
+                    ));
+                }
+                ?>
+
+            </div>
             <div class="main_menu_container__social">
                 <a href="https://www.facebook.com/%D0%A2%D0%B5%D0%BF%D0%BB%D0%BE-%D0%92%D0%BE%D0%B4%D0%B0-100382768073232/"><img src="<?php echo get_template_directory_uri() . '/img/face.svg' ?>;"></a>
                 <a href=""><img src="<?php echo get_template_directory_uri() . '/img/viber.svg' ?>;"></a>
