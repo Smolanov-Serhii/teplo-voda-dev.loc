@@ -31,7 +31,7 @@
             <div class="site-branding__main_menu">
                 <div class="wrapper">
                     <div class="wrapper_slogan">
-                        <span>інженерні системи</span>та будівництво
+                        <span>technology <br>solutions</span>
                     </div>
                     <div class="site-branding__main_menu__phone">
                         <span><img src="<?php echo get_template_directory_uri() ?>/img/kyivstar.svg"> +38 (097) 881 81 44</span>
